@@ -20,7 +20,7 @@ function checksExistsUserAccount(request, response, next) {
  }
   request.user = user;
   return next()
-  // Complete aqui
+
 }
 
 app.post('/users', (request, response) => {
@@ -41,7 +41,7 @@ users.push(newUser)
 return response.status(201).json(newUser)
 
  
-  // Complete aqui
+
 });
 
 app.get('/todos', checksExistsUserAccount, (request, response) => {
@@ -50,7 +50,7 @@ app.get('/todos', checksExistsUserAccount, (request, response) => {
 });
 
 app.post('/todos', checksExistsUserAccount, (request, response) => {
-  // Complete aqui
+
   
   const {title,deadline} = request.body
 
@@ -82,7 +82,7 @@ const todo = user.todos.find(todo=> todo.id ===id);
       
 
 return response.json(todo);
-  // Complete aqui
+
 });
 
 app.patch('/todos/:id/done', checksExistsUserAccount, (request, response) => {
